@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mohedbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Academy_type">
+    <Key>
+      <PropertyRef Name="academy_type_id" />
+    </Key>
+    <Property Name="academy_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="academy_type_code" Type="int" />
+    <Property Name="academy_type_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Certificate_type">
+    <Key>
+      <PropertyRef Name="Certificate_type_id" />
+    </Key>
+    <Property Name="Certificate_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Certificate_type_code" Type="int" />
+    <Property Name="Certificate_type_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Form_kind">
+    <Key>
+      <PropertyRef Name="From_kind_id" />
+    </Key>
+    <Property Name="From_kind_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="From_kind_code" Type="int" />
+    <Property Name="From_kind_name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="trans_id" />
+    </Key>
+    <Property Name="trans_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Source_trans_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="Student_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="Student_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="From_kind_code" Type="int" />
+    <Property Name="academy_type_code" Type="int" />
+    <Property Name="Certificate_type_code" Type="int" />
+    <Property Name="Trans_date" Type="date" />
+    <Property Name="e15" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_code" Type="int" />
+    <Property Name="StNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="FormNo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Branch_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Branch_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Privilege" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="mohedbModelStoreContainer">
+    <EntitySet Name="Academy_type" EntityType="Self.Academy_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Certificate_type" EntityType="Self.Certificate_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Form_kind" EntityType="Self.Form_kind" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

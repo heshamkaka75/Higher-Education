@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mohedbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Academy_type">
+    <Key>
+      <PropertyRef Name="academy_type_id" />
+    </Key>
+    <Property Name="academy_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="academy_type_code" Type="Int32" />
+    <Property Name="academy_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Certificate_type">
+    <Key>
+      <PropertyRef Name="Certificate_type_id" />
+    </Key>
+    <Property Name="Certificate_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Certificate_type_code" Type="Int32" />
+    <Property Name="Certificate_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Form_kind">
+    <Key>
+      <PropertyRef Name="From_kind_id" />
+    </Key>
+    <Property Name="From_kind_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="From_kind_code" Type="Int32" />
+    <Property Name="From_kind_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="trans_id" />
+    </Key>
+    <Property Name="trans_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Source_trans_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Student_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Int32" />
+    <Property Name="From_kind_code" Type="Int32" />
+    <Property Name="academy_type_code" Type="Int32" />
+    <Property Name="Certificate_type_code" Type="Int32" />
+    <Property Name="Trans_date" Type="DateTime" Precision="0" />
+    <Property Name="e15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_code" Type="Int32" />
+    <Property Name="StNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FormNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Branch_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Privilege" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="mohedbEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Academy_type" EntityType="Self.Academy_type" />
+    <EntitySet Name="Certificate_type" EntityType="Self.Certificate_type" />
+    <EntitySet Name="Form_kind" EntityType="Self.Form_kind" />
+    <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+    <EntitySet Name="users" EntityType="Self.user" />
+  </EntityContainer>
+</Schema>

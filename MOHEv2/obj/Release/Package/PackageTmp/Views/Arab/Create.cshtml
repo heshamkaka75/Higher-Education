@@ -1,0 +1,115 @@
+﻿@model MOHEv2.Models.ArabViewModel
+
+@{
+    ViewBag.Title = "سداد الشهاده العربية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+    
+<h2>سداد الشهاده العربية</h2>    
+
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            
+            <hr />
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                <input type="hidden" name="applicationId" value="@ViewBag.appid">
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="sourceTransactionId" value="@ViewBag.stid">
+            </div>
+
+
+            <div class="form-group">
+                <input type="hidden" name="billerId" value="@ViewBag.billerid">
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="serviceCode" value="@ViewBag.sercod">
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.customerBillerRef, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.customerBillerRef)
+                    @Html.ValidationMessageFor(model => model.customerBillerRef)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.additionalData.Student_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.additionalData.Student_Name)
+                    @Html.ValidationMessageFor(model => model.additionalData.Student_Name)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.transactionPaidAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.transactionPaidAmount)
+                    @Html.ValidationMessageFor(model => model.transactionPaidAmount)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.additionalData.MOHEAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.additionalData.MOHEAmount)
+                    @Html.ValidationMessageFor(model => model.additionalData.MOHEAmount)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="serviceRequsetType" value="@ViewBag.serreqtyp">
+            </div>
+
+            <div class="form-group">
+                <input type="hidden" name="currency" value="@ViewBag.curr">
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.additionalData.FormKind, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <select id="additionalData_FormKind" name="additionalData.FormKind">
+                        <option value="1">الدور الأول - قبول عام</option>
+                        <option value="2">القبول الخاص</option>
+                        <option value="3">قبول أبناء العاملين</option>
+                        <option value="6">القبول العام الدور الثاني</option>
+                        <option value="7">شواغر القبول الخاص</option>
+                        <option value="8">مباشر التعليم الأهلي</option>
+                        <option value="9">دبلوم حكومي</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.additionalData.Student_Acad_Type, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <select id="additionalData_Student_Acad_Type" name="additionalData.Student_Acad_Type">
+                        <option value="1">اكاديمي</option>
+                        <option value="2">زراعي</option>
+                        <option value="3">تجاري</option>
+                        <option value="4">صناعي</option>
+                        <option value="5">نسوي</option>
+                        <option value="6">اهلية</option>
+                        <option value="7">قراءات</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="سداد" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }
+    

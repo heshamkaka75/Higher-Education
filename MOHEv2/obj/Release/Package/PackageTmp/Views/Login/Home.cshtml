@@ -1,0 +1,84 @@
+﻿@{
+    if (Session["userid"] == null)
+    {
+        Response.Redirect("~/Login/index");
+    }
+    ViewBag.Title = "الصفحة الرئيسية";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="jumbotron text-center">
+    <br /><br /><br />
+    <div class="h1fonthome"><h1> سداد رسوم التعليم العالي</h1></div>
+    <br /><br />
+
+</div>
+
+<!-- /.row -->
+<div class="boxess">
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <a href="~/sudani/create">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <center>
+                                    <div>الشهاده السودانيه</div>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/arab/create">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <center>
+                                    <div>الشهاد العربيه</div>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <a href="~/print/index">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <center>
+                                <div>طباعه الايصال</div></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <a href="">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-9 text-right">
+                                <center>
+                                    <div> التقارير</div>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

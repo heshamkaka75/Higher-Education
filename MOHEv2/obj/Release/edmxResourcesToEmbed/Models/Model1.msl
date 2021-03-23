@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mohedbModelStoreContainer" CdmEntityContainer="mohedbEntities1">
+    <EntitySetMapping Name="Academy_type">
+      <EntityTypeMapping TypeName="mohedbModel.Academy_type">
+        <MappingFragment StoreEntitySet="Academy_type">
+          <ScalarProperty Name="academy_type_id" ColumnName="academy_type_id" />
+          <ScalarProperty Name="academy_type_code" ColumnName="academy_type_code" />
+          <ScalarProperty Name="academy_type_name" ColumnName="academy_type_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certificate_type">
+      <EntityTypeMapping TypeName="mohedbModel.Certificate_type">
+        <MappingFragment StoreEntitySet="Certificate_type">
+          <ScalarProperty Name="Certificate_type_id" ColumnName="Certificate_type_id" />
+          <ScalarProperty Name="Certificate_type_code" ColumnName="Certificate_type_code" />
+          <ScalarProperty Name="Certificate_type_name" ColumnName="Certificate_type_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Form_kind">
+      <EntityTypeMapping TypeName="mohedbModel.Form_kind">
+        <MappingFragment StoreEntitySet="Form_kind">
+          <ScalarProperty Name="From_kind_id" ColumnName="From_kind_id" />
+          <ScalarProperty Name="From_kind_code" ColumnName="From_kind_code" />
+          <ScalarProperty Name="From_kind_name" ColumnName="From_kind_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="mohedbModel.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="trans_id" ColumnName="trans_id" />
+          <ScalarProperty Name="Source_trans_id" ColumnName="Source_trans_id" />
+          <ScalarProperty Name="Student_num" ColumnName="Student_num" />
+          <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="From_kind_code" ColumnName="From_kind_code" />
+          <ScalarProperty Name="academy_type_code" ColumnName="academy_type_code" />
+          <ScalarProperty Name="Certificate_type_code" ColumnName="Certificate_type_code" />
+          <ScalarProperty Name="Trans_date" ColumnName="Trans_date" />
+          <ScalarProperty Name="e15" ColumnName="e15" />
+          <ScalarProperty Name="user_code" ColumnName="user_code" />
+          <ScalarProperty Name="StNo" ColumnName="StNo" />
+          <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="mohedbModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="Branch_name" ColumnName="Branch_name" />
+          <ScalarProperty Name="Branch_code" ColumnName="Branch_code" />
+          <ScalarProperty Name="Privilege" ColumnName="Privilege" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
